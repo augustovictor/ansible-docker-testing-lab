@@ -1,0 +1,32 @@
+- name: Include install-python.yml
+  include: install-python.yml
+
+
+- name: Bring up containers
+  hosts: containers
+  gather_facts: yes
+  # vars:
+  #   inventory:
+  #     - name: validation-container-1
+  #       image: "chrismeyers/centos6"
+  # roles:
+  #   - { role: provision_docker, provision_docker_inventory_group: "{{ inventory }}"}
+
+  tasks:
+    - name: Install apache
+      package:
+        name: apache2
+        state: present
+
+    - name: Start apache service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+
+# - name: Hello world
+#   hosts: docker_containers
+#   tasks:
+#     - debug:
+#         msg: "Hey you!"

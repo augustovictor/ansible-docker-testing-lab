@@ -1,0 +1,20 @@
+- name: Manage Postgres users
+  hosts: localhost
+  tasks:
+    - name: Ping
+      postgresql_ping:
+        db: my-db
+        login_host: localhost
+        login_user: myuser
+        login_password: abc123
+
+    - name: Create user
+      postgresql_user:
+        db: my-db
+        login_host: localhost
+        login_user: myuser
+        login_password: abc123
+        name: victor
+        password: pass123
+        priv: "CONNECT/ALL"
+        state: present

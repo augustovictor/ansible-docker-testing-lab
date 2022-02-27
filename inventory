@@ -1,0 +1,4 @@
+[containers]
+node-1
+[containers:vars]
+ansible_connection=docker

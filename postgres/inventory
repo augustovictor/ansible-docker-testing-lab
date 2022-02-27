@@ -1,0 +1,5 @@
+[pg]
+pg-n1
+
+[pg:vars]
+ansible_connection=docker

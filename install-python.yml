@@ -1,0 +1,12 @@
+- name: Install python on all hosts
+  hosts: "*"
+  gather_facts: false
+  tasks:
+    - name: Update OS and Install python
+      become: true
+      become_method: su
+      raw: "{{ item }}"
+      loop:
+        - apt-get update
+        # https://www.toptechskills.com/ansible-tutorials-courses/how-to-fix-usr-bin-python-not-found-error-tutorial/
+        - apt-get -y install python3
