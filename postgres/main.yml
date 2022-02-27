@@ -17,4 +17,6 @@
         name: victor
         password: pass123
         priv: "CONNECT/ALL"
+        # DB Priv:
+        # Table Priv: STATEMENT:  GRANT UPDATE, TRIGGER, DELETE, TRUNCATE, INSERT, REFERENES, SELECT ON TABLE "products" TO "victor"
         state: present
